@@ -1,0 +1,24 @@
+{
+  "name": "kage",
+  "version": "1.0.0",
+  "description": "Scroll-linked parallax 3D experience where the wordmark sits inside the scene and foreground elements occlude it.",
+  "license": "MIT",
+  "author": {
+    "name": "KK (Conan Sultan Khan)",
+    "email": "kkdev9715@gmail.com",
+    "url": "https://github.com/kkcyber2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kkcyber2/kage.git"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve.js",
+    "test": "node --test tests/"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

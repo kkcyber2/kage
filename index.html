@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kage — a word buried in six layers</title>
+<meta name="description" content="A scroll-linked parallax scene where the wordmark sits inside the landscape, not on top of it. Six depth planes, one canvas each, no images.">
+<meta name="author" content="KK (Conan Sultan Khan)">
+<meta name="theme-color" content="#0d1512">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kage — a word buried in six layers">
+<meta property="og:description" content="The wordmark is behind the grass. Scroll to lift it out of the landscape.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div id="stage" aria-hidden="true">
+  <canvas class="plane" id="p-sky"></canvas>
+  <canvas class="plane" id="p-ridgeFar"></canvas>
+  <canvas class="plane" id="p-ridgeMid"></canvas>
+  <div class="plane wordmark" id="p-wordmark"><span>KAGE</span></div>
+  <canvas class="plane" id="p-ridgeNear"></canvas>
+  <canvas class="plane" id="p-grass"></canvas>
+</div>
+
+<header class="bar">
+  <span class="logo">Kage</span>
+  <span class="meta">six planes · one canvas each</span>
+</header>
+
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+<main>
+  <section class="hero">
+    <p class="kicker">scroll</p>
+    <h1>The word sits<br>inside the hill.</h1>
+    <p class="sub">Not on top of it. Six independent depth planes, each drawn by hand at
+      runtime, and the typography threaded between them.</p>
+    <span class="cue" id="cue">↓</span>
+  </section>
+
+  <section class="beat" data-beat="1">
+    <p class="kicker">01 / occlusion</p>
+    <h2>Depth is what hides things.</h2>
+    <p>Most parallax sites move layers at different speeds. That is motion, not depth.
+      Depth is when something in front actually takes something behind away from you.</p>
+    <p>Here the near ridge climbs across the wordmark as you scroll and the grass closes
+      over the lower third of the letters. The type is genuinely behind them in the
+      compositing order, not covered by an overlay.</p>
+  </section>
+
+  <section class="beat" data-beat="2">
+    <p class="kicker">02 / construction</p>
+    <h2>Every ridge is a sine sum.</h2>
+    <p>Three out-of-phase bands, each with its own frequency and roughness, sampled into a
+      polygon and filled. Change the seed and you get a different mountain — no image
+      assets, no SVG files, nothing to download.</p>
+    <div class="spec">
+      <div><span>planes</span><b>6</b></div>
+      <div><span>images</span><b>0</b></div>
+      <div><span>anchors</span><b>1</b></div>
+      <div><span>loops</span><b>1</b></div>
+    </div>
+  </section>
+
+  <section class="beat" data-beat="3">
+    <p class="kicker">03 / restraint</p>
+    <h2>One animation frame, six canvases.</h2>
+    <p>Everything reads from a single scroll value in one <code>requestAnimationFrame</code>
+      pass, and each canvas is only redrawn when its offset actually changed. Nothing is
+      animated on a timer, so an idle page costs nothing.</p>
+    <p>On a phone the far planes drop to half resolution and the blur passes are skipped
+      entirely — the effect survives, the cost does not.</p>
+  </section>
+
+  <section class="out">
+    <h2>That is the whole idea.</h2>
+    <p>A single mechanic, executed precisely, rather than twelve effects fighting each other.</p>
+    <a class="cta" href="https://github.com/kkcyber2/kage">Read the source</a>
+  </section>
+</main>
+
+<footer>
+  <p>Built by KK (Conan Sultan Khan) · <a href="https://github.com/kkcyber2">github.com/kkcyber2</a></p>
+  <p class="muted">LinkedIn: <em>add profile URL</em></p>
+</footer>
+
+<script type="module" src="js/scene.js"></script>
+</body>
+</html>
