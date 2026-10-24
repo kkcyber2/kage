@@ -91,5 +91,5 @@ Just scroll. There is no navigation by design — the scroll *is* the interface.
 
 MIT — see [LICENSE](LICENSE).
 
-Built by **KK (Conan Sultan Khan)** · <kkdev9715@gmail.com>
+Built by **Konain Sultan Khan (KK)** · <kkdev9715@gmail.com>
 [github.com/kkcyber2](https://github.com/kkcyber2) · LinkedIn: _add profile URL_
